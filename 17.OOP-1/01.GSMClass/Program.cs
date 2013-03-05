@@ -51,28 +51,28 @@ namespace _07.GSMTest
             
             //09.Call add list
             
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now, "++44 772 123 94", 98);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now.AddDays(1), "++887 231 123", 32);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now.AddDays(2), "++359 111 2222", 47);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now.AddDays(3), "++1 273 1230", 77);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             
             //09 Display the call History
-            
-            myGSM.Call.DisplayHistory();
+
+            myGSM.CallHistory.DisplayHistory();
             
             //10.Call remove 
             Console.WriteLine("We will remove the call on position 1");
-            
-            myGSM.Call.RemoveAt(1); //we remove calls by index number because in the real world is like that
-            myGSM.Call.DisplayHistory();
+
+            myGSM.CallHistory.RemoveAt(1); //we remove calls by index number because in the real world is like that
+            myGSM.CallHistory.DisplayHistory();
 
             //11.Calculate Bill
-            myGSM.Call.CalculateBill(0.37m);
+            myGSM.CallHistory.CalculateBill(0.37m);
 
             //12.GSM CallHistory Test
             Console.WriteLine("///////////////////");
@@ -84,12 +84,12 @@ namespace _07.GSMTest
             GSM nokia = new GSM("htc", "galaxy");
             
             nokia.Call = new Call(DateTime.Now.AddDays(1), "++887 231 123", 32);
-            nokia.Call.Add(myGSM.Call);
+            nokia.CallHistory.Add(myGSM.Call);
             
             nokia.Call = new Call(DateTime.Now, "++359 887 231 123", 32);
-            nokia.Call.DisplayHistory();
-            myGSM.Call.DisplayHistory();
-            //myGSM.Test = 20;
+            nokia.CallHistory.DisplayHistory();
+            myGSM.CallHistory.DisplayHistory();
+            
             
             DateTime obj = DateTime.Now;
             

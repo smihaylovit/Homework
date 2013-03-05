@@ -98,6 +98,10 @@ class GSM
     //we can access Display.Size property etc.
     public Call Call;
     public int Test { get; private set; }
+
+    //adding CallHistory to the gsm
+    public CallHistory CallHistory = new CallHistory();
+    
     //<methods>
 
     //override GSM.ToString() 

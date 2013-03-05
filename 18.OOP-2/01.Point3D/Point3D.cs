@@ -16,10 +16,11 @@ public struct Point3D
 
     public static Point3D Center
     {
-        get { return center; }
+        get { return center; } //the center is read-only so no setter needed
     }
 
 
+    //the minimum constructor for Point3D is three coordinates :)
     public Point3D(int xCoord, int yCoord, int zCoord)
         : this()
     {
@@ -31,7 +32,7 @@ public struct Point3D
     //01. Override the ToString() method :)
     public override string ToString()
     {
-        return String.Format("[{0}, {1}, {2}]", XCoord, YCoord, ZCoord);
+        return String.Format("[{0}, {1}, {2}]", XCoord, YCoord, ZCoord); //custom format :D
     }
 }
 

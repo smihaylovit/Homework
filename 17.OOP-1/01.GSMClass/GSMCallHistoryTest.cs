@@ -11,29 +11,29 @@ using System.Text;
         {
             //Add few calls
             myGSM.Call = new Call(DateTime.Now, "++359 887 231 123", 32);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now, "++44 772 123 94", 98);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now.AddDays(1), "++887 231 123", 32);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now.AddDays(2), "++359 111 2222", 47);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
             myGSM.Call = new Call(DateTime.Now.AddDays(3), "++1 273 1230", 77);
-            myGSM.Call.Add(myGSM.Call);
+            myGSM.CallHistory.Add(myGSM.Call);
 
             //Display CallHistory
-            myGSM.Call.DisplayHistory();
+            myGSM.CallHistory.DisplayHistory();
 
             //Calculate Price
-            myGSM.Call.CalculateBill(0.37m);
+            myGSM.CallHistory.CalculateBill(0.37m);
 
             //remove Longest Call
             RemoveLongestCall(myGSM);
-            myGSM.Call.DisplayHistory();
+            myGSM.CallHistory.DisplayHistory();
 
             //clear the history
-            myGSM.Call.Clear();
-            myGSM.Call.DisplayHistory();
+            myGSM.CallHistory.Clear();
+            myGSM.CallHistory.DisplayHistory();
 
         }
 
@@ -43,7 +43,7 @@ using System.Text;
             int currentIndex = 0;
             int index=0;
 
-            foreach (Call item in currentGSM.Call.History)
+            foreach (Call item in currentGSM.CallHistory.History)
             {
                 
                 if (item.Duration>longestCall)
@@ -54,7 +54,7 @@ using System.Text;
                     currentIndex++;
             }
 
-            currentGSM.Call.RemoveAt(index);
+            currentGSM.CallHistory.RemoveAt(index);
         }
     }
 
