@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2DEA7380-5B47-4470-BC37-19803CADB80E}</ProjectGuid>
+    <ProjectGuid>{04D46A72-0C36-41F2-A95B-2DD4FF4DEDF9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.School</RootNamespace>
-    <AssemblyName>01.School</AssemblyName>
+    <RootNamespace>_03.Zoo</RootNamespace>
+    <AssemblyName>03.Zoo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -43,19 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IComment.cs" />
-    <Compile Include="SchoolClass.cs" />
-    <Compile Include="Discipline.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="Cat.cs" />
+    <Compile Include="Dog.cs" />
+    <Compile Include="Frog.cs" />
+    <Compile Include="ISound.cs" />
+    <Compile Include="Kitty.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="School.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
     <Compile Include="Test.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram2.cd" />
+    <Compile Include="Tomcat.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
