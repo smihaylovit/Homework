@@ -37,5 +37,42 @@ namespace _05.BitArray64
         {
             return GetEnumerator();
         }
+
+        //overriding .Equals()
+
+        public override bool Equals(object obj)
+        {
+            BitArray64 comparison = obj as BitArray64;
+
+            if (comparison == null)
+            {
+                return false;
+            }
+            else if (this.bits == comparison.bits)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //overriding .GetHashCode();
+        public override int GetHashCode()
+        {
+            return bits.GetHashCode();
+        }
+
+        //overriding == && !=
+        public static bool operator ==(BitArray64 leftBits, BitArray64 rightBits)
+        {
+            return BitArray64.Equals(leftBits, rightBits);
+        }
+
+        public static bool operator !=(BitArray64 leftBits, BitArray64 rightBits)
+        {
+            return !(BitArray64.Equals(leftBits, rightBits));
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace _05.BitArray64
     {
         static void Main(string[] args)
         {
+            
             BitArray64 test = new BitArray64(1719);
 
             foreach (int item in test)
