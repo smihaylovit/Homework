@@ -6,114 +6,112 @@
  * 03. renaming  functions, example: PopTip(); with functionNamesLikeThis();
  * 04. adding ';' where's needed
  * 05. changing "==" with "==="
- *
- *
- *
- *
- *
- *
+ * 06. removing eval(); because it should be use only for serelazation
+ * 07. replacing document.layers and document.all as they are obsolut
+ *	we use document.getElementById(); instead
 */
 function doSomething() {
 	"use strict";
-	var b = navigator.appName;
+	var browserName = navigator.appName;
 	var addScroll = false;
+
 	if ((navigator.userAgent.indexOf('MSIE 5') > 0) || (navigator.userAgent.indexOf('MSIE 6')) > 0) {
 		addScroll = true;
 	}
-	var off = 0;
-	var txt = '';
-	var pX = 0;
-	var pY = 0;
+
+	var pointX = 0;
+	var pointY = 0;
+
 	document.onmousemove = mouseMove;
-	if (b === 'Netscape') {
+	if (browserName === 'Netscape') {
 		document.captureEvents(Event.MOUSEMOVE);
 	}
 
 	function mouseMove(evn) {
-		if (b === 'Netscape') {
-			pX = evn.pageX - 5;
-			pY = evn.pageY;
+		if (browserName === 'Netscape') {
+			pointX = evn.pageX - 5;
+			pointY = evn.pageY;
 		} else {
-			pX = event.x - 5;
-			pY = event.y;
+			pointX = event.x - 5;
+			pointY = event.y;
 		}
-		if (b === 'Netscape') {
-			if (document.layers['ToolTip'].visibility === 'show') {
+		if (browserName === 'Netscape') {
+			if (document.getElementById('ToolTip').visibility === 'show') {
 				popTip();
 			}
 		} else {
-			if (document.all['ToolTip'].style.visibility === 'visible') {
+			if (document.getElementById('ToolTip').style.visibility === 'visible') {
 				popTip();
 			}
 		}
 	}
 	function popTip() {
-		if (b === 'Netscape') {
-			theLayer = eval('document.layers[\'ToolTip\']');
-			if ((pX + 120) > window.innerWidth) {
-				pX = window.innerWidth - 150;
+		if (browserName === 'Netscape') {
+			theLayer = document.getElementById('ToolTip');
+			if ((pointX + 120) > window.innerWidth) {
+				pointX = window.innerWidth - 150;
 			}
-			theLayer.left = pX + 10;
-			theLayer.top = pY + 15;
+			theLayer.left = pointX + 10;
+			theLayer.top = pointY + 15;
 			theLayer.visibility = 'show';
 		} else {
-			theLayer = eval('document.all[\'ToolTip\']');
+			theLayer = document.getElementById('ToolTip');
 			if (theLayer) {
-				pX = event.x - 5;
-				pY = event.y;
+				pointX = event.x - 5;
+				pointY = event.y;
 				if (addScroll) {
-					pX = pX + document.body.scrollLeft;
-					pY = pY + document.body.scrollTop;
+					pointX = pointX + document.body.scrollLeft;
+					pointY = pointY + document.body.scrollTop;
 				}
-				if ((pX + 120) > document.body.clientWidth) {
-					pX = pX - 150;
+				if ((pointX + 120) > document.body.clientWidth) {
+					pointX = pointX - 150;
 				}
-				theLayer.style.pixelLeft = pX + 10;
-				theLayer.style.pixelTop = pY + 15;
+				theLayer.style.pixelLeft = pointX + 10;
+				theLayer.style.pixelTop = pointY + 15;
 				theLayer.style.visibility = 'visible';
 			}
 		}
 	}
 	function hideTip() {
 		args = hideTip.arguments;
-		if (b === 'Netscape') {
-			document.layers['ToolTip'].visibility = 'hide';
+		if (browserName === 'Netscape') {
+			document.getElementById('ToolTip').visibility = 'hide';
 		} else {
-			document.all['ToolTip'].style.visibility = 'hidden';
+			document.getElementById('ToolTip').style.visibility = 'hidden';
 		}
 	}
 	function hideMenu1() {
-		if (b === 'Netscape') {
-			document.layers['menu1'].visibility = 'hide';
+		if (browserName === 'Netscape') {
+			document.getElementById('menu1').visibility = 'hide';
 		} else {
-			document.all['menu1'].style.visibility = 'hidden';
+			document.getElementById('menu1').style.visibility = 'hidden';
 		}
 	}
 
 	function showMenu1() {
-		if (b === 'Netscape') {
-			theLayer = eval('document.layers[\'menu1\']');
+		if (browserName === 'Netscape') {
+			theLayer = document.getElementById('menu1');
 			theLayer.visibility = 'show';
 		} else {
-			theLayer = eval('document.all[\'menu1\']');
+			theLayer = document.getElementById('menu1');
 			theLayer.style.visibility = 'visible';
 		}
-	} //
+	} 
 
 	function hideMenu2() {
-		if (b === 'Netscape') {
-			document.layers['menu2'].visibility = 'hide';
+		if (browserName === 'Netscape') {
+			document.getElementById('menu2').visibility = 'hide';
 		} else {
-			document.all['menu2'].style.visibility = 'hidden';
+			document.getElementById('menu2').style.visibility = 'hidden';
 		}
 	}
 	function showMenu2() {
-		if (b === 'Netscape') {
-			theLayer = eval('document.layers[\'menu2\']');
+		if (browserName === 'Netscape') {
+			theLayer = document.getElementById('menu2');
 			theLayer.visibility = 'show';
 		} else {
-			theLayer = eval('document.all[\'menu2\']');
+			theLayer = document.getElementById('menu2');
 			theLayer.style.visibility = 'visible';
 		}
-	} // izvAnostata
+	} // izvAnostata :D
 }
