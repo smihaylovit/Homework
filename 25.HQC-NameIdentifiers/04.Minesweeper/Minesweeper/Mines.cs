@@ -152,7 +152,7 @@
             Console.WriteLine("Have a nice day! :)");
             Console.WriteLine("Made in Bulgaria!");
             Console.WriteLine("Press any key to continue . . .");
-            Console.Read();
+            Console.ReadKey();
         }
 
         private static void GetRating(List<Score> topScorers)

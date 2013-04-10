@@ -8,5 +8,5 @@ namespace _01.Student
     public enum University
     {
         TelerikAcademy, SofiaUniversity, TechnicalUniversity
-    };
+    }
 }

@@ -17,11 +17,11 @@ namespace _01.Student
             myStudent.University = University.TelerikAcademy;
             myStudent.Specialty = Specialty.Chemistry;
 
-            //testing cloning
+            // testing cloning
             var clonedStudent = myStudent.Clone() as Student;
             Console.WriteLine("clonedStudent is Student: {0}", clonedStudent is Student);
             
-            //testing deep cloning
+            // Testing deep cloning
             myStudent.FirstName = "Mondial";
             Console.WriteLine("myStudent: {0}", myStudent.FirstName);
             Console.WriteLine("clonedStudent: {0}", clonedStudent.FirstName);
@@ -30,19 +30,19 @@ namespace _01.Student
             Console.WriteLine("myStudent: {0}", myStudent.FirstName);
             Console.WriteLine("clonedStudent: {0}", clonedStudent.FirstName);
             
-            //testing Equals
+            // testing Equals
             Console.WriteLine("myStudent.Equals(clonedStudent): {0}", myStudent.Equals(clonedStudent));
 
-            //testing .ToString();
+            // testing .ToString();
             Console.WriteLine("clonedStudent Information: \n {0}", clonedStudent.ToString());
-            //testing .GetHashCode();
+            // testing .GetHashCode();
             Console.WriteLine("GetHashCode() = {0}", clonedStudent.GetHashCode());
 
-            //testing == and !=
+            // testing == and !=
             Console.WriteLine("myStudent==clonedStudent: {0}", myStudent == clonedStudent);
             Console.WriteLine("myStudent!=clonedStudent: {0}", myStudent != clonedStudent);
 
-            //testing CompareTo
+            // testing CompareTo
             Console.WriteLine("myStudent.CompareTo(clonedStudent): {0}", myStudent.CompareTo(clonedStudent));
             
             myStudent.FirstName = "AAAA";

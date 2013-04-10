@@ -15,7 +15,7 @@ namespace Person
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Name: "+this.Name+"\n");
+            sb.Append("Name: " + this.Name + "\n");
 
             if (this.Age == null)
             {
@@ -23,7 +23,7 @@ namespace Person
             }
             else
             {
-                sb.Append("Age: "+this.Age+"");
+                sb.Append("Age: " + this.Age + "");
             }
 
             return sb.ToString();

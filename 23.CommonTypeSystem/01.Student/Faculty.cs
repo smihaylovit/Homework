@@ -8,6 +8,6 @@ namespace _01.Student
     public enum Faculty
     {
         Economical, IT, Law
-    };
+    }
 
 }

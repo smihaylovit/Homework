@@ -8,7 +8,7 @@ namespace _05.BitArray64
     class BitArray64 : IEnumerable<int>
     {
         private ulong bits;
-        private ulong mask=1;
+        private ulong mask = 1;
 
         public BitArray64(ulong input)
         {
@@ -27,7 +27,7 @@ namespace _05.BitArray64
         //implementing IEnumerable
         public IEnumerator<int> GetEnumerator()
         {
-            for (int i = 63; i >=0; i--)
+            for (int i = 63; i >= 0; i--)
             {
                 yield return ((mask << i) & bits) > 0 ? 1 : 0;
             }
@@ -72,7 +72,7 @@ namespace _05.BitArray64
 
         public static bool operator !=(BitArray64 leftBits, BitArray64 rightBits)
         {
-            return !(BitArray64.Equals(leftBits, rightBits));
+            return !BitArray64.Equals(leftBits, rightBits);
         }
     }
 }

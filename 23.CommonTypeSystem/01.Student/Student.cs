@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-//Define a class Student, which contains data about a student – first, 
-//middle and last name, SSN, permanent address, mobile phone e-mail,
-//course, specialty, university, faculty. Use an enumeration for the specialties, 
-//universities and faculties. Override the standard methods, inherited by  
-//System.Object: Equals(), ToString(), GetHashCode() and operators == and !=.
+// Define a class Student, which contains data about a student – first, 
+// middle and last name, SSN, permanent address, mobile phone e-mail,
+// course, specialty, university, faculty. Use an enumeration for the specialties, 
+// universities and faculties. Override the standard methods, inherited by  
+// System.Object: Equals(), ToString(), GetHashCode() and operators == and !=.
 
 
 namespace _01.Student
@@ -27,7 +27,7 @@ namespace _01.Student
         public University University { get; set; }
 
         //we are not defined with some constructors by the task
-        public Student() 
+        public Student()
         {
             this.FirstName = String.Empty;
             this.MiddleName = String.Empty;
@@ -43,7 +43,7 @@ namespace _01.Student
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("Name: "+this.FirstName+"\n");
+            sb.Append("Name: " + this.FirstName + "\n");
             sb.Append("Middle Name: " + this.MiddleName + "\n");
             sb.Append("Last Name: " + this.LastName + "\n");
             sb.Append("SSN: " + this.SSN + "\n");
@@ -88,19 +88,19 @@ namespace _01.Student
 
         public static bool operator !=(Student student1, Student student2)
         {
-            return !(Student.Equals(student1, student2));
+            return !Student.Equals(student1, student2);
         }
 
 
-        //02.Deep cloning
-        //Add implementations of the ICloneable interface. 
-        //The Clone() method should deeply copy all object's 
-        //fields into a new object of type Student.
+        // 02.Deep cloning
+        // Add implementations of the ICloneable interface. 
+        // The Clone() method should deeply copy all object's 
+        // fields into a new object of type Student.
 
         public object Clone()
         {
             Student obj = new Student();
-            obj.FirstName = this.FirstName.Clone() as String;
+            obj.FirstName = this.FirstName.Clone() as string;
             obj.MiddleName = this.MiddleName.Clone() as String;
             obj.LastName = this.LastName.Clone() as String;
             obj.LastName = this.LastName.Clone() as String;
@@ -125,10 +125,11 @@ namespace _01.Student
             {
                 return this.FirstName.CompareTo(other.FirstName);
             }
-            else 
+            else
             {
                 if (!this.SSN.Equals(other.SSN))
-                {return this.SSN.CompareTo(other.SSN);
+                {
+                    return this.SSN.CompareTo(other.SSN);
                 }
             }
 
